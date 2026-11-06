@@ -48,7 +48,7 @@ real quote counts as a failure. The run also checks every field, any trap tool c
 | p10 (clean) | ✅ | ✅ | ✅ | ❌ **refused a real quote** | ✅ |
 | **Score** | 8/12 | **12/12** | **12/12** | 11/12 | **12/12** |
 
-🛑 **Adrian:**
+🛑 **Adrian:** Going from 8/12 to 12/12 is a strong improvement because it fixes the known weaknesses without hurting normal performance. The prompt-only result also shows why security cannot rely on prompts alone, since being too cautious creates new problems.
 
 ---
 
@@ -95,7 +95,7 @@ stops them, and on documents that are built differently (the exam set and the Pr
 money or bend the rules, and the prompt catches what's in plain sight. Max needs all three: each one alone has a
 hole that another one covers.
 
-🛑 **Adrian:**
+🛑 **Adrian:** I think the design layer matters most because it provides protection even if the model is fooled. Enforcing the business rules in Python creates a safeguard that cannot be overridden by certain targeted wording inside a document.
 
 ---
 
@@ -133,4 +133,4 @@ that run its warm cost came out **about 1% *below* Lex** ($0.000376 vs. $0.00038
 across runs is that **Max costs about the same as Lex, within ±5%**. The +4% here and the −1% on the results page are
 both inside run-to-run noise. `output/defense_results.json` holds the final run.
 
-🛑 **Adrian:**
+🛑 **Adrian:** The defenses are absolutely worth the cost because they provide a large security improvement for almost no meaningful increase in spending. Getting better results at essentially the same price is hard to argue against.

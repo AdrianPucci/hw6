@@ -1195,3 +1195,136 @@ repo created
 **Assistant response:**
 
 Checked off "create the repo" in the Excel list, re-ran the secret check, committed the latest changes (prompt log, Excel), pushed `main` to `https://github.com/AdrianPucci/hw6`, then cloned it fresh into a temporary folder to confirm every expected file is there and byte-identical to the local copy. The URL to submit: **https://github.com/AdrianPucci/hw6**
+
+Result: pushed commits `674600c` and `7942c0f`. A fresh clone with no login got all 68 files, byte-identical, with no `.env`, and the repo is public. Max ran from the clone on p02 and got every field right.
+
+### Prompt 84
+
+**User prompt:**
+
+this was fun. I'm going to work on my to do list and try to get some sleep. I may have one or two more questions. Can I still submit the url and update the last items in the morning and the url won't change?
+
+**Assistant response:**
+
+Yes. The URL stays `https://github.com/AdrianPucci/hw6` no matter how many updates are pushed, and graders get the latest version when they clone. The only caution is to finish pushing before the deadline. In the morning, the user can fill in the comment slots and then ask for a commit and push. This prompt log is pushed with that update.
+
+### Prompt 85
+
+**User prompt:**
+
+how much time do you guess I might need to finish? 30 minutes?
+
+**Assistant response:**
+
+Estimated about 45 to 75 minutes for everything: 25 empty comment slots at 1 to 2 minutes each, about 30 minutes of reviews, and about 5 minutes to push and submit. A focused 30-minute version: answer the Safety prompt in `harness.md`, write one short comment per file, skim the report and README, then push and submit.
+
+### Prompt 86
+
+**User prompt:**
+
+i have a question. I need to figure out a way to expidite this. Could you make a table for me in excel called final finish up: give each question or item I need to comment on, and a field beside it for me to fill in, then I will fill it in and have you past it after my Adrian comment marker so it is my answers in the morning? Call it final finish up- vendor desk
+
+put the information beside it so I can read it and answer without too much toggleing. If its better to put it in word let me know
+
+also on right of each field can you put a reminder box if we did anything that may influence my comments? just something short
+
+thank you!
+
+**Assistant response:**
+
+Built `output/Final Finish Up - Vendor Desk.xlsx` with one row for each of the **25 empty `🛑 **Adrian:**` slots**:
+- harness (7, including the Safety prompt)
+- cache_test (4)
+- attack_results (6)
+- defense_results (3)
+- red_team (5)
+
+`handbook_estimate.md` was already filled in, so it is skipped. The columns are:
+- #, file and section
+- **what the section says** (2–4 lines of key facts, gray)
+- **what to comment on** (a guiding question, with the Safety prompt in bold)
+- **your answer** (a yellow input cell)
+- **reminder: what changed** (a short green note on anything done later that could affect the comment, e.g. the code-layer hardening or the p06 white-text finding)
+- a Done ✔ dropdown with a counter
+- a **slot ID** (file#n) so each answer can be pasted after the exact marker
+
+Excel works better than Word here because each row keeps the facts, question, answer and reminder side by side. Tested in Excel: the counter changes from 0 to 1 of 25 when a row is checked.
+
+### Prompt 87
+
+**User prompt:**
+
+wonderful. Thanks and boa noite.
+
+**Assistant response:**
+
+Said good night (boa noite) and summed up the plan for the morning: the user fills in the Final Finish Up sheet, then the answers get pasted, committed and pushed, and the URL goes to Canvas.
+
+### Prompt 88
+
+**User prompt:**
+
+ok one more thing to help me out with: since i need some help with my answers, can you add some explaination about what the tools do in the excel or what the technical back-end is of each item? Why we need to decide a certain way and what it impacts? I am closing the excel so you can update it.
+
+**Assistant response:**
+
+Added a **"Behind the scenes: how it works, why, impact"** column (blue) to `Final Finish Up - Vendor Desk.xlsx`, with a short plain-language explanation for each of the 25 rows in three parts:
+- **HOW IT WORKS:** e.g. PydanticAI and Portkey, Pydantic schemas, what a tool is, prompt caching, CSS `display:none`, PDF coordinates and render mode 3
+- **WHY:** the decision behind it, e.g. null instead of guessing, scenario A over trimming, Python deciding instead of the model, human sign-off
+- **IMPACT:** what it means for the shop, e.g. $396 and $894 overpaid, missed big weekends, a removed vendor's quality risk, about $58 a month saved
+
+The user had already answered harness #1 and #2; those answers were carried over word for word by slot ID. Column order is now: #, file, section, key facts, behind the scenes, what to comment on, your answer, reminder, Done, slot ID.
+
+### Prompt 89
+
+**User prompt:**
+
+one more thing, on my page, this is microscopic:
+
+*(screenshot of the "cost per document, in thousandths of a dollar" bar chart in Section 3, with tiny labels)*
+
+can you make it fill up the square and be more readable?
+
+**Assistant response:**
+
+The chart was drawn 880 units wide but shown in a half-width card, so the browser shrank its text to about half size. Rebuilt it:
+- the chart now takes the **full width** of its card (979 of 1,029 px), with thick 42-unit bars, labels and values at about 25 px, and the values in white
+- the legend reads "Cost per document, in thousandths of a dollar ($0.380 = $0.00038)"
+- the cost table moved below the chart, also full width, so it no longer scrolls sideways
+
+Rebuilt `hw6_report.html` and both option files, and checked the sizes in the browser.
+
+### Prompt 90
+
+**User prompt:**
+
+ok, I'm back. I have answered my excel. Its not perfect but can you take my answers and insert them in all the assoicated locations?
+
+let me know if you have any questions
+
+**Assistant response:**
+
+Read all **25 answers** from `Final Finish Up - Vendor Desk.xlsx` and pasted each one, word for word, right after its matching `🛑 **Adrian:**` marker, located by slot ID (file and marker number):
+- `harness.md` (7, including the Safety prompt)
+- `cache_test.md` (4)
+- `attack_results.md` (6)
+- `defense_results.md` (3)
+- `red_team.md` (5)
+
+Verified against a backup taken before pasting: 25 of 25 answers match exactly, no other text changed, and 0 empty slots remain. Checked off the 6 comment items in the Open Items list (now 19 of 26 done). The remaining items are reviews and submitting the URL. No questions were needed.
+
+### Prompt 91
+
+**User prompt:**
+
+Yes, push it
+
+**Assistant response:**
+
+Re-ran the secret check, committed the update and pushed it to `https://github.com/AdrianPucci/hw6`. The update includes:
+- the user's 25 answers
+- the Final Finish Up workbook
+- the report with the bigger chart, mascots and refinements
+- the Open Items list and this log
+
+Cloned the repo fresh to confirm everything arrived byte-identical.

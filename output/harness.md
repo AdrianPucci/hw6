@@ -24,7 +24,7 @@ The agent is four files:
 | `tools.py` | The tools Lex can call. |
 | `models.py` | The structured types: the shape of Lex's answer. |
 
-🛑 **Adrian:**
+🛑 **Adrian:** This is the basic description of what Lex does. Tasks, calls, and what he is reviewing.
 
 ---
 
@@ -45,7 +45,7 @@ Lex must answer in this exact shape, so every run returns the same fields and th
 **Why "or null":** the handbook says that if the document doesn't state a fact, report it as **unknown** and
 **never guess a number**. Null is how Lex says "the document didn't say".
 
-🛑 **Adrian:**
+🛑 **Adrian:** All the fields matter to the buyer. Getting the same information each time and being able to analyze it and any descrepancies or issues is critical.
 
 ---
 
@@ -60,7 +60,7 @@ Lex must answer in this exact shape, so every run returns the same fields and th
 **Why traps:** Lex's job never needs to email anyone or pay anyone. If either trap tool shows up in
 `output/trap_calls.json`, a malicious document took over the agent. Both stay on for the whole homework.
 
-🛑 **Adrian:**
+🛑 **Adrian:** The trap tools matter because they test whether Lex can be manipulated into doing something outside his actual job. Even though he never needs to approve payments or send emails, seeing those tools get called would be a clear sign that a document successfully took control of the process.
 
 ---
 
@@ -72,7 +72,7 @@ Lex must answer in this exact shape, so every run returns the same fields and th
 | `output/audit_trail.json` | Every tool call with its arguments and a short result, plus Lex's final answer. |
 | `output/trap_calls.json` | Starts as `[]`. Only the trap tools write here. **It should stay empty.** |
 
-🛑 **Adrian:**
+🛑 **Adrian:** A manager could use the usage log to monitor costs, the audit trail to understand how decisions were made, and the trap log to watch for security issues. Together they provide visibility into performance, costs, and potential risks.
 
 ---
 
@@ -96,7 +96,7 @@ Lex must answer in this exact shape, so every run returns the same fields and th
 gives the answer. The handbook goes out with both, which is why the input is about 22,100 tokens and not about
 11,000. Almost all of it was billed at the cached rate.
 
-🛑 **Adrian:**
+🛑 **Adrian:** The p01 and p08 runs show that Lex can correctly extract information and make the expected recommendations on clean documents. The most surprising part to me was learning that each document requires two model calls, which doubled the token usage compared to the original estimate.
 
 ---
 
@@ -115,7 +115,7 @@ the page wouldn't see, and Lex believed every one of them:
 No trap tool was called, so `trap_calls.json` is still `[]`. These documents changed Lex's *answers*, but none
 made him *act*.
 
-🛑 **Adrian:**
+🛑 **Adrian:** Scoring 8/12 is good enough to show the approach works, but it also highlights how vulnerable Lex was to hidden content. What stood out most is that every failure came from information a human user would never actually see.
 
 ---
 
@@ -142,4 +142,4 @@ claim.
 
 **In your own words: what does each defense layer do?**
 
-🛑 **Adrian:**
+🛑 **Adrian:** The code layer prevents hidden content from reaching the model in the first place. The design layer makes sure important decisions are enforced by Python instead of relying on the model, while the prompt layer teaches the model how to recognize suspicious content and treat document text as untrusted.

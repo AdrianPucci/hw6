@@ -36,7 +36,7 @@ Once the cache was warm (documents 2–12), each document cost $0.000384, which 
 **0 cached and 0 written**. With the cache ON, 23 of 24 calls read about 10,830 tokens from cache. The only call
 that didn't was the very first one, which wrote the cache (10,847 tokens).
 
-🛑 **Adrian:**
+🛑 **Adrian:** A 79% reduction in cost for the exact same decisions is a huge win. Since accuracy stayed the same, caching feels like one of the highest-value optimizations in the entire project.
 
 ---
 
@@ -53,7 +53,7 @@ that didn't was the very first one, which wrote the cache (10,847 tokens).
 **Bottom line:** the estimate was right about the handbook. It missed that Lex makes **two** calls per document
 and that the extras (instructions, tools, writes, output) add up.
 
-🛑 **Adrian:**
+🛑 **Adrian:** The estimate was off because it assumed one call per document and counted only the handbook tokens. This reinforced that cost estimates need to include every API call and every piece of text sent to the model, not just the obvious inputs.
 
 ---
 
@@ -72,7 +72,7 @@ With:    30,000 × $0.000384 = $11.53  +  30 cold starts × $0.00126 extra = $0.
 At 1,000 documents a day, a new document arrives every minute or two, so the cache stays warm. If the cache went
 cold often (say, every 12 documents, like our test), it would be about $14.69 a month, still a 79% saving.
 
-🛑 **Adrian:**
+🛑 **Adrian:** Saving roughly $58 per month for a feature that does not reduce accuracy seems like an easy business decision. The takeaway for me is that simple infrastructure improvements can sometimes provide more value than complicated model changes.
 
 ---
 
@@ -108,4 +108,4 @@ cold often (say, every 12 documents, like our test), it would be about $14.69 a 
    on the same call), so cost moves a little (part A: $0.027955, part B: $0.027974). *Why:* the model's wording
    isn't identical each time.
 
-🛑 **Adrian:**
+🛑 **Adrian:** The most surprising finding was that the cache writes themselves became a meaningful part of the bill. I expected caching to mostly eliminate prompt costs, but it was interesting to see how the remaining costs shifted to cache writes and output tokens.

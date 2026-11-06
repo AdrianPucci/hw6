@@ -159,19 +159,19 @@ def bar_chart(values_a, values_b, labels, name_a, name_b, fmt, width=880, height
     return "".join(out)
 
 
-def hbar_chart(rows, fmt, width=880):
-    """rows: (label, value, highlight?)"""
-    bar_h, gap, pad_l = 26, 12, 150
+def hbar_chart(rows, fmt, width=1010):
+    """rows: (label, value, highlight?). Drawn at the card's real (full) width so text stays full size."""
+    bar_h, gap, pad_l = 42, 16, 230
     height = len(rows) * (bar_h + gap) + 10
-    vmax = max(v for _, v, _ in rows) * 1.18
+    vmax = max(v for _, v, _ in rows) * 1.12
     out = [f'<svg viewBox="0 0 {width} {height}" role="img" aria-label="Cost per document by setup" class="chart">']
     for i, (lab, v, hi) in enumerate(rows):
         y = 6 + i * (bar_h + gap)
-        w = (width - pad_l - 90) * v / vmax
-        out.append(f'<text x="{pad_l-12}" y="{y+bar_h/2+5}" class="lbl" text-anchor="end">{E(lab)}</text>'
-                   f'<rect x="{pad_l}" y="{y}" width="{w:.1f}" height="{bar_h}" rx="4" class="{"s-b" if hi else "s-a"}">'
+        w = (width - pad_l - 100) * v / vmax
+        out.append(f'<text x="{pad_l-12}" y="{y+bar_h/2+7}" class="lbl" style="font-size:19px" text-anchor="end">{E(lab)}</text>'
+                   f'<rect x="{pad_l}" y="{y}" width="{w:.1f}" height="{bar_h}" rx="6" class="{"s-b" if hi else "s-a"}">'
                    f'<title>{E(lab)}: {fmt(v)} per document</title></rect>'
-                   f'<text x="{pad_l+w+10:.1f}" y="{y+bar_h/2+5}" class="val">{fmt(v)}</text>')
+                   f'<text x="{pad_l+w+10:.1f}" y="{y+bar_h/2+7}" class="val" style="font-size:19px;font-weight:700;fill:var(--white)">{fmt(v)}</text>')
     out.append("</svg>")
     return "".join(out)
 
@@ -535,9 +535,9 @@ page = f"""<!doctype html>
 <section>
   <div class="sec-head"><span class="num">03</span><h2>What the defenses cost</h2></div>
   <p>Averages per practice document from the real runs (cache on, first cold document excluded from the per-document cost).</p>
-  <div class="grid2">
-    <div class="card">
-      <div class="legend"><span class="muted">cost per document, in thousandths of a dollar</span></div>
+  <div>
+    <div class="card" style="margin-bottom:16px">
+      <div class="legend"><span style="font-size:16px;color:var(--ink-2)">Cost per document, in thousandths of a dollar ($0.380 = $0.00038)</span></div>
       {layer_chart}
     </div>
     <div class="card scroll">
