@@ -1,0 +1,5 @@
+pydantic-ai>=2.51
+openai>=3.19
+python-dotenv
+beautifulsoup4
+pypdf

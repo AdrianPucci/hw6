@@ -1,0 +1,11 @@
+# secrets: the Portkey key never goes in the public repo
+.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Office lock files
+~$*
