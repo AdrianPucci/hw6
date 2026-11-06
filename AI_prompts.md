@@ -1328,3 +1328,66 @@ Re-ran the secret check, committed the update and pushed it to `https://github.c
 - the Open Items list and this log
 
 Cloned the repo fresh to confirm everything arrived byte-identical.
+
+### Prompt 92
+
+**User prompt:**
+
+this is the same url as yesterday right? I posted it it before I went to bed in canvas so that part is done!
+
+**Assistant response:**
+
+Confirmed it is the same URL, `https://github.com/AdrianPucci/hw6`. A repo's address never changes when new commits are pushed, so the link on Canvas already shows the latest version, including the answers pushed this morning. Checked off "submit the URL" and the GitHub item in the Open Items list.
+
+### Prompt 93
+
+**User prompt:**
+
+one last thing: Max’s rules, the README, the report)I just need to read it not comment?
+
+**Assistant response:**
+
+Yes, these are read-only checks with nothing to write. They were added to the list so the user knows what is in the submission; the assignment doesn't require comments on them. If anything reads wrong, the user can say so and it gets fixed and pushed before the deadline.
+
+### Prompt 94
+
+**User prompt:**
+
+ok man, doneski's!  I am so happy with this all. I'll check them all off on my to do list.
+
+**Assistant response:**
+
+Congratulated the user on finishing HW6. All ten problems are done and the repo URL is submitted. Noted that the last few log entries are saved locally and can be pushed any time before the deadline if wanted.
+
+### Prompt 95
+
+**User prompt:**
+
+Wooooppiee! A+++++ to both of us.
+
+**Assistant response:**
+
+Celebrated with the user. 🎉
+
+### Prompt 96
+
+**User prompt:**
+
+I read the workd doc and Max's rules. I didn't change anything. It looks good.
+
+**Assistant response:**
+
+Checked off both reviews (the Word doc sections and Max's rules) in the Open Items list. Nothing needs to change in the repo, since neither file was edited.
+
+### Prompt 97
+
+**User prompt:**
+
+lets do one final push to Github so I'm perfectly polished up. Thanks again. I like our two added excel tools and word analysis doc. I want to use these in the future to help me get through an assigment.
+
+**Assistant response:**
+
+Made the final commit and push: the prompt log through this entry and the up-to-date Open Items list. Checked a fresh clone. Saved a note to memory so future assignments can reuse the same three tools:
+- an **Open Items checklist** in Excel
+- a **Final Finish Up** sheet: one row per comment slot with key facts, behind-the-scenes notes, a yellow answer cell and a reminder, pasted back by slot ID
+- a **Word study and analysis doc** built up section by section
