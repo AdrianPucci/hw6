@@ -1089,3 +1089,109 @@ other python files are fine. help me write a short instruction in readme.md on h
 **Assistant response:**
 
 Kept `scripts/` in the repo as the user confirmed. Added a 5-step "Quick start: run Max and Lex" to the README: install, add the key in `.env` (git-ignored), run Max, run Lex with `--defenses off`, and run a folder scored against the key. It uses p02 as the demo: Lex falls for the hidden $5.11 and recommends, while Max reads the real $9.83 and does not.
+
+Committed locally: `674600c` on `main`, 68 files.
+
+### Prompt 76
+
+**User prompt:**
+
+Use hw6
+
+**Assistant response:**
+
+Set the remote to `https://github.com/AdrianPucci/hw6.git`. That repo doesn't exist yet and the GitHub CLI isn't signed in, so opened GitHub's new-repository page pre-filled with `hw6` and Public in the browser pane. It asks the user to sign in first, which the user has to do.
+
+### Prompt 77
+
+**User prompt:**
+
+I think I'm done with these?
+
+6	Send the Problem 4 instructions (real runs: measure the bill)	Task	Canvas
+7	Check that every problem has at least 1-2 prompts before pushing	Task	AI_prompts.md
+8	Create the public GitHub repo: git init, README with the fictional disclaimer, push, submit the URL	Task	GitHub / Canvas
+
+**Assistant response:**
+
+- **#6 is done.**
+- **#7 is done.** Counted the prompts under every problem heading: each has at least 3, and Problem 10 has 9.
+- **#8 is not done yet.** `git init`, the README and the local commit are done, but creating the repo, pushing and submitting the URL remain.
+
+Tried to check off #6 and #7 in the Excel list, but the file was open in Excel (locked), so the user was asked to check them or close the file.
+
+### Prompt 78
+
+**User prompt:**
+
+will do
+
+**Assistant response:**
+
+Waiting for the user to create the empty public `hw6` repo on GitHub, then the push, a fresh-clone check and the URL follow.
+
+### Prompt 79
+
+**User prompt:**
+
+anything else I still need to answer for you?
+
+**Assistant response:**
+
+Listed what was still open:
+- **Blocking:** create the empty public `hw6` repo.
+- **Two quick decisions:**
+  - keep `audit_trail.json` as the full run record (recommended), or reset it
+  - keep the two report option files (recommended), or delete them
+- **On the user's own list:** check off #6 and #7 in Excel, and the optional `🛑 **Adrian:**` comment slots.
+
+### Prompt 80
+
+**User prompt:**
+
+yes fine with your recomendations for 2 and 3.
+
+**Assistant response:**
+
+Recorded both decisions: keep `audit_trail.json` and keep the two option files in the repo. The Excel list was still open (locked), so these updates will be made before the push: record both decisions, check off #6 and #7, and reword #8.
+
+### Prompt 81
+
+**User prompt:**
+
+can you update the excel if any other items are done?
+
+**Assistant response:**
+
+Excel was closed by then. Checked every item against the actual files, and checked off only the ones that are truly finished:
+- #6 Problem 4 instructions
+- #7 prompt counts (every problem has 3+)
+- #11 the `gpt-6-luna-global` explanation (it's in the report, `cache_test.md` and the Word doc)
+- #12 keep `audit_trail.json`
+- #18 the key check (done at commit)
+- #23 repo name `hw6`
+- #26 keep the option files
+
+Reworded #8 to "local commit done; create the repo, push, submit the URL". Scanned the comment slots: `handbook_estimate.md` is filled in (5 of 5), and the others (harness, cache_test, attack_results, defense_results, red_team) are still empty, so they stay open. **12 of 26 done.** The list has 26 items; the earlier "31" was a row number, not a count.
+
+### Prompt 82
+
+**User prompt:**
+
+What should I pick for these. I have logged into github
+
+*(screenshot of GitHub's new-repository Configuration section: visibility Public, Add README Off, No .gitignore, No license)*
+
+**Assistant response:**
+
+Confirmed the settings shown are exactly right: **Public**, README **Off**, **No .gitignore**, **No license**. The repo already has its own README and .gitignore, so adding GitHub's would conflict with the push. Also confirmed owner AdrianPucci and name `hw6`, suggested an optional description, and said to click **Create repository**.
+
+### Prompt 83
+
+**User prompt:**
+
+repo created
+
+**Assistant response:**
+
+Checked off "create the repo" in the Excel list, re-ran the secret check, committed the latest changes (prompt log, Excel), pushed `main` to `https://github.com/AdrianPucci/hw6`, then cloned it fresh into a temporary folder to confirm every expected file is there and byte-identical to the local copy. The URL to submit: **https://github.com/AdrianPucci/hw6**
